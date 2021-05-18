@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Vavilon Calculator</title>
+</head>
+<body>
+  <script type="text/javascript">
+	function calculate(){
+		var fullPrice = document.getElementById('fullPrice').value;
+		var timeMonths = document.getElementById('timeMonths').value;
+		var investment = document.getElementById('investment').value;
+		
+		var result = document.getElementById('result');
+		var vavilonResult = (0.06 * investment * timeMonths);
+		result.innerText = 'Скидка: ' + vavilonResult / fullPrice * 100 + '%';
+	}
+  </script>
+  <div>
+	<label style="display:block" for="fullPrice">Полная цена товара вместе с процентом на рассрочку: </label>
+	<input name="fullPrice" id="fullPrice" />
+  </div>
+  <div>
+	<label style="display:block" for="timeMonths">На сколько месяцев рассрочка: </label>
+	<input name="timeMonths" type="number" min="1" max="12" id="timeMonths" />
+  </div>
+  <div>
+	<label style="display:block" for="investment">Инвестиция в Вавилон: </label>
+	<input name="investment" id="investment" />
+  </div>
+  <div>
+	<button type="button" onclick="calculate()">Рассчитать</button>
+  </div>
+  <div>
+	<p id="result"></p>
+  </div>
+</body>
+</html>
